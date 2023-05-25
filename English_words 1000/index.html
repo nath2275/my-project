@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฝึกภาษาอังกฤษ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- https://www.thaicss.com/css3-box-shadow-%E0%B8%97%E0%B8%B3-drop-shadow-%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-css3/ -->
+</head>
+<body>
+    <div class="flex">
+        <div class="tab-menu">
+            <div class="icon-tabmenu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+    
+            <!-- language -->
+            <div class="drop-down">
+                <div class="choose-lg">
+                    <a href="#" class="bt_en">
+                        <img src="https://tripderntang.com/wp-content/uploads/2016/05/visa-eng.png" alt=""> 
+                        <p>EN</p>
+                    </a>
+                    <a href="#" class="bt_th">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/320px-Flag_of_Thailand.svg.png" alt=""> 
+                        <p>TH</p>
+                    </a>
+                </div>
+        
+                <!-- bg -->
+                <div class="team-bg-color">
+                    <p>background</p>
+                    <div class="team-bg">
+                        <div class="bg-color bg1"></div>
+                        <div class="bg-color bg2"></div>
+                        <div class="bg-color bg3"></div>
+                    </div>
+                </div>
+        
+                <!-- save word -->
+                <div class="save-word learnword" >
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <p>เรียนศัพท์ 1,000 คำ</p>
+                </div>
+                <div class="save-word learnword mysave">
+                    <i class="fa-regular fa-bookmark"></i>
+                    <p>คำศัพท์ที่บันทึกไว้</p>
+                </div>
+                <div class="save-word mysetting">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>ตั้งค่า</p>
+                </div>
+            </div>
+        </div>
+        <!-- learn english words 1,000 page -->
+        <div class="word1000-page">
+            <div class="setLevel">
+                <div class="setNumber">set 1</div>
+                <div class="downSet" onclick="reduceSetValue()"><i class="fa-solid fa-minus"></i></div>
+                <input class="count_range" type="range" min="1" max="100" value="1" step="1" onchange="ChangeSetValue()">
+                <div class="upSet" onclick="addSetValue()"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="true-false">
+                <div class="user_true">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <p class="check_user_true">0</p>
+                </div>
+                <div class="user_false">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <p class="check_user_wrong">0</p>
+                </div>
+            </div>
+            <div class="type_word">
+                <div class="bt_type">หมวด a</div>
+                <div class="bt_at_word">ศัพท์ที่ 1</div>
+            </div>
+
+            <!-- translate -->
+            <div class="translate">
+                <div class="flex_layout">
+                    <div class="wordList">มาก</div>
+                    <div class="funtions">
+                        <!-- save -->
+                        <div class="box-repeat" onclick="repeatClick()">
+                            <i class="fa-solid fa-repeat fa-beat-fade"></i>
+                        </div>
+                        <div class="box-save">
+                            <i class="fa-regular fa-bookmark icon-save"></i>
+                        </div>
+                        <!--
+                            <i class="fa-solid fa-bookmark icon-save"></i>
+                        -->
+                        
+                        <!-- speaker ลำโพง-->
+                        <div class="box-speaker" onclick="question()">
+                            <i class="fa-solid fa-volume-high fa-bounce"></i>
+                            <!-- <i class="fa-solid fa-volume-high icon-speaker"></i> -->
+                        </div>
+                        
+                        <!--
+                            <i class="fa-solid fa-volume-xmark icon-speaker"></i>
+                        -->
+                    </div>
+                </div>
+                <!-- input -->
+                <input type="text" class="input_translate" placeholder="เขียนคำตอบ">
+                <div class="check_word">
+                    <!-- <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <p class="real_answer">
+                        a lot อย่าลืมใส่เสียง
+                    </p> -->
+                </div>
+                <div class="container-bt">
+                    <button class="continue" onclick="answerTrue()">ข้าม</button>
+                    <button class="submit" onclick="submit()">ส่งคำตอบ</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- learn english words 1,000 page ----save -->
+        <div class="word1000-page-save">
+            <div class="setLevel">
+                <div class="setNumber-save">set 1</div>
+                <div class="downSet-save" onclick="reduceSetValueSave()"><i class="fa-solid fa-minus"></i></div>
+                <input class="count_range-save" type="range" min="1" max="100" value="1" step="1" onchange="ChangeSetValueSave()">
+                <div class="upSet-save" onclick="addSetValueSave()"><i class="fa-solid fa-plus"></i></div>
+            </div>
+
+            <div class="type_word-save">
+                <div class="bt_type-save">หมวด z</div>
+                <div class="bt_at_word-save">ศัพท์ที่ 1</div>
+            </div>
+
+            <!-- translate -->
+            <div class="translate-save">
+                <div class="flex_layout-save">
+                    <div class="wordList-save">มาก</div>
+                    <div class="funtions-save">
+                        <!-- save -->
+                        <div class="box-repeat-save" onclick="repeatClickSave()">
+                            <i class="fa-solid fa-repeat fa-beat-fade"></i>
+                        </div>          
+                        <!-- speaker ลำโพง-->
+                        <div class="box-speaker-save" onclick="questionSave()">
+                            <i class="fa-solid fa-volume-high fa-bounce"></i>
+                            <!-- <i class="fa-solid fa-volume-high icon-speaker"></i> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- input -->
+                <input type="text" class="input_translate-save" placeholder="เขียนคำตอบ">
+                <div class="check_word-save">
+                    <!-- <i class="fa-solid fa-circle-check"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <p class="real_answer">
+                        a lot อย่าลืมใส่เสียง
+                    </p> -->
+                </div>
+                <div class="container-bt">
+                    <button class="continue" onclick="answerTrueSave()">ข้าม</button>
+                    <button class="submit-save" onclick="submitSave1()">ส่งคำตอบ</button>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+        <div class="pageSave_word">
+            <h1>คำศัพท์ที่บันทึกไว้</h1>
+            <div class="table">
+                <p class="table-head column0">ลำดับ</p>
+                <p class="table-head line-left">TH</p>
+                <p class="table-head line-left">EN</p>
+                <p class="table-head line-left center">ลบ</p>
+                
+                <p class="table-child column0">1</p>
+                <p class="table-child line-left">มาก</p>
+                <p class="table-child line-left">a lot</p>
+                <p><i class="fa-solid fa-circle-xmark IconDelete"></i></p>
+                
+            </div>
+            <button class="repeat" onclick="showSaveWord()">ทบทวนคำศัพท์</button>
+        </div>
+
+
+
+
+        <div class="setting-page">
+            <p>คนพากษ์เสียง :</p>
+            <select id='voiceList'></select> <br><br>
+            <p>จำนวนคำศัพท์ใน 1 set :</p>
+            <button class="sw3" onclick="setNumberGroupWord3()">เซ็ตละ 3 ข้อ</button>
+            <button class="sw5" onclick="setNumberGroupWord5()">เซ็ตละ 5 ข้อ</button>
+        </div>
+
+    </div>
+    
+
+
+
+    
+
+
+    
+    <script src="word.js"></script>
+    <script src="style.js"></script>
+    <script src="menu.js"></script>
+    <script src="wordSave.js"></script>
+    <script src="speak.js"></script>
+    <script src="setMode.js"></script>
+    
+
+</body>
+</html>
